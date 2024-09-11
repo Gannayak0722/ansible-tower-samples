@@ -1,7 +1,13 @@
-- name: Hello World Sample
-  hosts: all
-  tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World!"
+---
+# This playbook prints a simple debug message
+- name: Hello World example
+  hosts: 127.0.0.1
+  connection: local
 
+  vars:
+    hello: "Hello World!!!"
+
+  tasks:
+  - name: Print debug message
+    debug:
+      msg: "{{ hello }}"
