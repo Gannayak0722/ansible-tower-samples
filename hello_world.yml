@@ -4,10 +4,20 @@
   hosts: localhost
 
   tasks:
-  - name: Print name
-    debug:
-      msg: "Alex"
-  
   - name: Print location
     debug:
-      msg: "London"
+      msg: "{{ location }}"
+
+  - name: Copy location value
+    set_fact:
+      cacheable: True
+      visible_location: "{{ location }}"
+
+  - name: Print visible location
+    debug:
+      msg: "{{ visible_location }}"
+
+  - name: Print name
+    debug:
+      msg: "{{ name }}"
+  
