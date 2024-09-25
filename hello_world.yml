@@ -6,8 +6,8 @@
   tasks:
   - name: Print name
     debug:
-      msg: "{{ name }}"
+      msg: "Alex"
   
   - name: Print location
     debug:
-      msg: "{{ location }}"
+      msg: "London"
